@@ -13,6 +13,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/AlessandroBerardi/action_profiler}
   s.rdoc_options = ["--main", "README"]
   s.require_paths = ["lib"]
+  s.requirements = ["rtree gem from https://github.com/AlessandroBerardi/rtree"]
   s.rubygems_version = %q{1.6.2}
   s.summary = %q{Ruby implementation of a profiler for ruby code execution}
 
@@ -20,11 +21,14 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<rtree>, [">= 0"])
       s.add_development_dependency(%q<rspec>, [">= 0"])
     else
+      s.add_dependency(%q<rtree>, [">= 0"])
       s.add_dependency(%q<rspec>, [">= 0"])
     end
   else
+    s.add_dependency(%q<rtree>, [">= 0"])
     s.add_dependency(%q<rspec>, [">= 0"])
   end
 end

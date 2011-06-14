@@ -37,9 +37,13 @@ spec = Gem::Specification.new do |s|
   # If you want to depend on other gems, add them here, along with any
   # relevant versions
   # s.add_dependency("some_other_gem", "~> 0.1.0")
+  s.add_dependency("rtree") #https://github.com/AlessandroBerardi/rtree
 
   # If your tests use any gems, include them here
   s.add_development_dependency("rspec")
+  
+  # Requirements
+  s.requirements << "rtree gem from https://github.com/AlessandroBerardi/rtree"
 end
 
 # This task actually builds the gem. We also regenerate a static
