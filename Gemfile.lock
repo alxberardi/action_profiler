@@ -1,0 +1,29 @@
+GIT
+  remote: git://github.com/AlessandroBerardi/rtree.git
+  revision: aaad3bddfce40bfd6a5845007b69d115bdf4e1ef
+  specs:
+    rtree (0.1.0)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    diff-lcs (1.1.2)
+    gem-this (0.3.6)
+    rake (0.8.7)
+    rspec (2.6.0)
+      rspec-core (~> 2.6.0)
+      rspec-expectations (~> 2.6.0)
+      rspec-mocks (~> 2.6.0)
+    rspec-core (2.6.4)
+    rspec-expectations (2.6.0)
+      diff-lcs (~> 1.1.2)
+    rspec-mocks (2.6.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  gem-this
+  rake (= 0.8.7)
+  rspec
+  rtree!
