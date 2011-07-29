@@ -1,5 +1,6 @@
 require 'action_profiler/action_call'
 require 'action_profiler/profile_printer'
+require 'singleton'
 
 module ActionProfiler
   class Profiler
