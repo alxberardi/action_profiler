@@ -20,7 +20,7 @@ spec = Gem::Specification.new do |s|
 
   # Change these as appropriate
   s.name              = "action_profiler"
-  s.version           = "0.1.0"
+  s.version           = "0.1.1"
   s.summary           = "Ruby implementation of a profiler for ruby code execution"
   s.author            = "Alessandro Berardi,,,"
   s.email             = "berardialessandro@gmail.com"
