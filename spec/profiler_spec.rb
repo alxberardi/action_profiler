@@ -4,21 +4,19 @@ require 'action_profiler/profiler'
 
 describe ActionProfiler::Profiler, "when initialized" do
   before do
+    ActionProfiler::Profiler.reset_instance
     @profiler = ActionProfiler::Profiler.instance
   end
   
   it "should be disabled" do
     @profiler.enabled.should be_false
   end
-  
-  after do
-    ActionProfiler::Profiler.reset_instance
-  end
 end
 
 
 describe ActionProfiler::Profiler, "when disabled" do
   before do
+    ActionProfiler::Profiler.reset_instance
     @profiler = ActionProfiler::Profiler.instance
   end
   
@@ -32,15 +30,12 @@ describe ActionProfiler::Profiler, "when disabled" do
     @profiler.enable!
     @profiler.enabled.should be_true
   end
-  
-  after do
-    ActionProfiler::Profiler.reset_instance
-  end
 end
 
 
 describe ActionProfiler::Profiler, "when enabled" do
   before do
+    ActionProfiler::Profiler.reset_instance
     @profiler = ActionProfiler::Profiler.instance
     @profiler.enable!
   end
@@ -54,15 +49,12 @@ describe ActionProfiler::Profiler, "when enabled" do
     @profiler.profile_action(:test_action) { "test" }
     @profiler.action_calls.count.should eql 1
   end
-  
-  after do
-    ActionProfiler::Profiler.reset_instance
-  end
 end
 
 
 describe ActionProfiler::Profiler, "when profiling" do
   before do
+    ActionProfiler::Profiler.reset_instance
     @profiler = ActionProfiler::Profiler.instance
     @profiler.enable!
   end
@@ -83,15 +75,12 @@ describe ActionProfiler::Profiler, "when profiling" do
     @profiler.profile_action(:test_action_2) { sleep(0.2) }
     @profiler.total_duration.round(1).should eql 0.3
   end
-  
-  after do
-    ActionProfiler::Profiler.reset_instance
-  end
 end
 
 
 describe ActionProfiler::Profiler, "when profiling nested actions" do
   before do
+    ActionProfiler::Profiler.reset_instance
     @profiler = ActionProfiler::Profiler.instance
     @profiler.enable!
   end
@@ -189,9 +178,5 @@ describe ActionProfiler::Profiler, "when profiling nested actions" do
     @profiler.map_calls.flatten.inject({}) { |hash, action_call| 
       hash[action_call.action_id] = action_call.parent_duration_fraction && action_call.parent_duration_fraction.round(2)
       hash }.should eql predicted_duration_percentages
-  end
-  
-  after do
-    ActionProfiler::Profiler.reset_instance
   end
 end
