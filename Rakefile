@@ -1,11 +1,11 @@
 require "rubygems"
-require "rake/gempackagetask"
-require "rake/rdoctask"
+require "rubygems/package_task"
+require "rdoc/task"
 
 require "rspec"
 require "rspec/core/rake_task"
 RSpec::Core::RakeTask.new do |t|
-  t.rspec_opts = %w(--format specdoc --colour)
+  t.rspec_opts = %w(--format documentation --colour)
 end
 
 
@@ -31,13 +31,13 @@ spec = Gem::Specification.new do |s|
   s.rdoc_options      = %w(--main README)
 
   # Add any extra files to include in the gem
-  s.files             = %w(Gemfile.lock README Gemfile) + Dir.glob("{spec,lib}/**/*")
+  s.files             = %w(Gemfile.lock Rakefile README action_profiler.gemspec Gemfile) + Dir.glob("{spec,lib}/**/*")
   s.require_paths     = ["lib"]
 
   # If you want to depend on other gems, add them here, along with any
   # relevant versions
   # s.add_dependency("some_other_gem", "~> 0.1.0")
-  s.add_dependency("rtree") #https://github.com/AlessandroBerardi/rtree
+  s.add_dependency("rtree", "~> 0.2.0") #https://github.com/AlessandroBerardi/rtree
 
   # If your tests use any gems, include them here
   s.add_development_dependency("rspec")
@@ -53,7 +53,7 @@ end
 #
 # To publish your gem online, install the 'gemcutter' gem; Read more 
 # about that here: http://gemcutter.org/pages/gem_docs
-Rake::GemPackageTask.new(spec) do |pkg|
+Gem::PackageTask.new(spec) do |pkg|
   pkg.gem_spec = spec
 end
 
@@ -71,7 +71,7 @@ end
 task :package => :gemspec
 
 # Generate documentation
-Rake::RDocTask.new do |rd|
+RDoc::Task.new do |rd|
   rd.main = "README"
   rd.rdoc_files.include("README", "lib/**/*.rb")
   rd.rdoc_dir = "rdoc"
