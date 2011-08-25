@@ -1,15 +1,15 @@
 GIT
   remote: git://github.com/AlessandroBerardi/rtree.git
-  revision: aaad3bddfce40bfd6a5845007b69d115bdf4e1ef
+  revision: 4efed100ffd9e1a1caf12059ef210e10097df1bf
   specs:
-    rtree (0.1.0)
+    rtree (0.2.0)
 
 GEM
   remote: http://rubygems.org/
   specs:
     diff-lcs (1.1.2)
-    gem-this (0.3.6)
-    rake (0.8.7)
+    gem-this (0.3.7)
+    rake (0.9.2)
     rspec (2.6.0)
       rspec-core (~> 2.6.0)
       rspec-expectations (~> 2.6.0)
@@ -24,6 +24,6 @@ PLATFORMS
 
 DEPENDENCIES
   gem-this
-  rake (= 0.8.7)
+  rake
   rspec
   rtree!
