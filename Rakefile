@@ -37,7 +37,7 @@ spec = Gem::Specification.new do |s|
   # If you want to depend on other gems, add them here, along with any
   # relevant versions
   # s.add_dependency("some_other_gem", "~> 0.1.0")
-  s.add_dependency("rtree", "~> 0.2.0") #https://github.com/AlessandroBerardi/rtree
+  s.add_dependency("rtree", "~> 0.2.5") #https://github.com/AlessandroBerardi/rtree
 
   # If your tests use any gems, include them here
   s.add_development_dependency("rspec")
