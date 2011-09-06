@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/AlessandroBerardi/rtree.git
-  revision: 09b7da159fe9b7eb6c475e368378606bcf4642f7
+  revision: 672930326873d5667c5e367c59a8a62d1c272d93
   specs:
-    rtree (0.2.5)
+    rtree (0.3.0)
       activesupport (>= 2.3.8)
       i18n (>= 0.6.0)
 
@@ -32,4 +32,4 @@ DEPENDENCIES
   gem-this
   rake
   rspec
-  rtree (~> 0.2.5)!
+  rtree (~> 0.3.0)!
